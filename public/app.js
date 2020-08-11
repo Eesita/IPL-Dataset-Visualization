@@ -1,3 +1,5 @@
+//Plot the total number of matches played each year.
+
 function fetchAndVisualizeData() {
   fetch("./data.json")
     .then(r => r.json())
@@ -22,7 +24,7 @@ function visualizeMatchesPlayedPerYear(matchesPlayedPerYear) {
       type: "column"
     },
     title: {
-      text: "Matches Played Per Year"
+      text: "1. Matches Played Per Year"
     },
     subtitle: {
       text:
@@ -39,7 +41,7 @@ function visualizeMatchesPlayedPerYear(matchesPlayedPerYear) {
     },
     series: [
       {
-        name: "Years",
+        name: "Matches Played",
         data: seriesData
       }
     ]
