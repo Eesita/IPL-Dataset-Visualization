@@ -1,14 +1,12 @@
 const express = require("express");
 const app = express();
-var cors = require('cors');
 const data = require('./public/data_four.json')
 //var config = require('./config');
 
 app.use(express.static(__dirname+'/public'));
-
-const hostname = 'localhost';
-const port = process.env.PORT || 3000;
-app.listen(port, ()=>console.log(`Listening on port http://${hostname}:${port}/`));
+const hostname = 'localhost'
+const port = process.env.PORT || 3000
+app.listen(port, ()=>console.log(`Listening on port http://${hostname}:${port}/`))
 
 
 app.get('/', (req, res) => {
@@ -21,3 +19,5 @@ app.get('/economy', (req, res) => {
     res.json(data['seasonTop10EconomicBowlers'][year]);
     
 });
+
+
