@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 var cors = require('cors');
 const data = require('./public/data_four.json')
+//var config = require('./config');
 
 app.use(express.static(__dirname+'/public'));
 
