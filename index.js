@@ -3,16 +3,17 @@ const csv = require("csvtojson");
 const matchesPlayedPerYear = require("./ipl/matchesPlayedPerYear");
 const matchesWonPerTeam = require("./ipl/matchesWonPerTeam");
 const extraRunsConcededByEachTeam = require("./ipl/extraRunsConcededByEachTeam");
-const top10EconomicBowlers = require("./ipl/top10EconomicBowlers");
+//const top10EconomicBowlers = require("./ipl/top10EconomicBowlers");
+const seasonTop10EconomicBowlers = require("./ipl/seasonTop10EconomicBowlers");
 const winByEachTeam = require("./ipl/winByEachTeam");
-
 
 const MATCHES_FILE_PATH = "./csv_data/matches.csv";
 const DELIVERIES_FILE_PATH = "./csv_data/deliveries.csv";
 const JSON_OUTPUT_FILE_PATH = "./public/data.json"; //matchesPlayedPerYear
 const JSON_OUTPUT_FILE_PATH2 = "./public/data2.json"; //matchesWonPerTeam
 const JSON_OUTPUT_FILE_PATH3 = "./public/data3.json"; //extraRunsConcededByEachTeam
-const JSON_OUTPUT_FILE_PATH4 = "./public/data4.json"; //top10EconomicBowlers
+//const JSON_OUTPUT_FILE_PATH4 = "./public/data4.json"; //top10EconomicBowlers
+const JSON_OUTPUT_FILE_PATH_FOUR = "./public/data_four.json";
 const JSON_OUTPUT_FILE_PATH5 = "./public/data5.json"; //winByeachTeam
 
 function main() {
@@ -44,16 +45,27 @@ function main() {
         });
     });
 
-    //wtop10EconomicBowlers
+    // //top10EconomicBowlers
+    // csv()
+    // .fromFile(MATCHES_FILE_PATH)
+    // .then(matches => {
+    //   csv()
+    //     .fromFile(DELIVERIES_FILE_PATH)
+    //     .then(deliveries => {
+    //       let result = top10EconomicBowlers(matches, deliveries);
+    //       savetop10EconomicBowlers(result);
+    //     });
+    // });
+
     csv()
     .fromFile(MATCHES_FILE_PATH)
     .then(matches => {
       csv()
-        .fromFile(DELIVERIES_FILE_PATH)
-        .then(deliveries => {
-          let result = top10EconomicBowlers(matches, deliveries);
-          savetop10EconomicBowlers(result);
-        });
+      .fromFile(DELIVERIES_FILE_PATH)
+      .then(deliveries => {
+        let result4 = seasonTop10EconomicBowlers(matches, deliveries)
+        saveSeasonTop10EconomicBowlers(result4);
+      })
     });
 
     //winByEachTeam
@@ -62,12 +74,10 @@ function main() {
     .then(matches => {
        let result = winByEachTeam(matches);
        saveWinByEachTeam(result);
-       console.log(result);
     });
-
 };
 
-
+//savefunctions
 
 //matchesPlayedPerYear
 function saveMatchesPlayedPerYear(result) {
@@ -109,12 +119,25 @@ function saveExtraRunsConcededByEachTeam(result) {
 }; 
 
 //top10EconomicBowlers
-function savetop10EconomicBowlers(result) {
+// function savetop10EconomicBowlers(result) {
+//   const jsonData = {
+//     top10EconomicBowlers: result
+//   };
+//   const jsonString = JSON.stringify(jsonData);
+//   fs.writeFile(JSON_OUTPUT_FILE_PATH4, jsonString, "utf8", err => {
+//     if (err) {
+//       console.error(err);
+//     }
+//   });
+// };
+
+//seasonTop10EconomicBowlers
+function saveSeasonTop10EconomicBowlers(result) {
   const jsonData = {
-    top10EconomicBowlers: result
+    seasonTop10EconomicBowlers: result
   };
   const jsonString = JSON.stringify(jsonData);
-  fs.writeFile(JSON_OUTPUT_FILE_PATH4, jsonString, "utf8", err => {
+  fs.writeFile(JSON_OUTPUT_FILE_PATH_FOUR, jsonString, "utf8", err => {
     if (err) {
       console.error(err);
     }

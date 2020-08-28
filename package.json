@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "ipl": "node index.js",
-    "start": "http-server"
+    "start": "http-server",
+    "dev": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "csvtojson": "^2.0.10",
     "http-server": "^0.12.1"
   }

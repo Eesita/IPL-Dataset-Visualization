@@ -9,8 +9,6 @@ fetchAndVisualizeData();
 
 function visualizeData(data) {
     visualizeExtraRunsConcededByEachTeam(data.extraRunsConcededByEachTeam);
-
-    console.log(data.extraRunsConcededByEachTeam, "3")
     return;
 };
 
@@ -65,7 +63,7 @@ Highcharts.chart('extra-runs-conceded-by-each-team', {
         type: 'column'
     },
     title: {
-        text: '3. For the year 2016, plot the extra runs conceded by each team.'
+        text: '3. For the year 2016, Extra Runs Conceded By Each Team.'
     },
     subtitle: {
         text: 'Source: <a href="https://www.kaggle.com/nowke9/ipldata/data">IPL Dataset</a>'

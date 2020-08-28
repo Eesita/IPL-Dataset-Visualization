@@ -14,30 +14,38 @@
 </head>
 
 <body>
-    <center><h1>IPL Dataset visualization</h1></center>
+    <h1>IPL Dataset visualization</h1>
     
-    <div id="matches-played-per-year" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <div id="matches-played-per-year" style="min-width: 310px; height: 400px; margin: 0 auto" class="container"></div>
     <script src="./app.js"></script>
 
 
-    <div id="matches-won-per-team" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <div id="matches-won-per-team" style="min-width: 310px; height: 400px; margin: 0 auto" class="container"></div>
     <script src="./app2.js"></script>
 
-    <div id="extra-runs-conceded-by-each-team" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <div id="extra-runs-conceded-by-each-team" style="min-width: 310px; height: 400px; margin: 0 auto" class="container"></div>
     <script src="./app3.js"></script>
 
 
-    <div id="top-10-economical-bowlers" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-    <script src="./app4.js"></script>
+    <!-- <div id="top-10-economical-bowlers" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <script src="./app4.js"></script> -->
 
-    <div id="win-by-each-team" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <div id="win-by-each-team" style="min-width: 310px; height: 400px; margin: 0 auto" class="container"></div>
     <script src="./app5.js"></script>
 
-    <br>
-    <br>
-    <br>
 
-    <center><h5>"Made by Eesita"</h5></center>
+    <form id='query'>
+        <p>Select season  between 2008 to 2019 to see the top 10 Economical Bowlers</p>
+        <label>Enter Year: <input type="number" min="2008" max="2019" name="year"></label>
+        <input type="submit" value="Search">
+    </form>
+    <div id="season-top-10-economical-bowlers" class="container"></div>
+    <script src="./appFour.js"></script>
+
+    <h5>"Made with &hearts;
+    <h5>by Eesita"</h5>
+    </h5>
+    
 
     
 

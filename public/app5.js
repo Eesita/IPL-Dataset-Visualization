@@ -47,7 +47,7 @@ Highcharts.chart('win-by-each-team', {
         type: 'pie'
     },
     title: {
-        text: '5. Win By Each Team'
+        text: '4. Win By Each Team'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
