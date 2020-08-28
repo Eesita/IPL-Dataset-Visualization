@@ -1,6 +1,10 @@
 {
   "name": "ipl_project",
   "version": "1.0.0",
+  "engines":{
+    "node": "10.15.0",
+    "npm": "6.14.5"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
