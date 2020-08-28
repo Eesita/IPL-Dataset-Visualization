@@ -6,9 +6,13 @@ const data = require('./public/data_four.json')
 
 app.use(express.static(__dirname+'/public'));
 
+const hostname = 'localhost';
+const port = process.env.PORT || 3000;
+app.listen(port, ()=>console.log(`Listening on port http://${hostname}:${port}/`));
+
 
 app.get('/', (req, res) => {
-    res.sendFile(index.js);
+    res.sendFile();
 });
 
 app.get('/economy', (req, res) => {
@@ -16,15 +20,4 @@ app.get('/economy', (req, res) => {
     //console.log(data['seasonTop10EconomicBowlers'][year]);
     res.json(data['seasonTop10EconomicBowlers'][year]);
     
-});
-
-app.use(cors({
-        credentials: true,
-        origin: true
-    })
-);
-app.options('*', cors());
-
-app.listen(process.env.PORT || 8000, function() {
-    console.log('Server running on port 8000', '');
 });
